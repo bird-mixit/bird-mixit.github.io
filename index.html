@@ -3,20 +3,74 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>
-Audio Demos for Improving Bird Classification with Unsupervised Sound Separation
+Improving Bird Classification with Unsupervised Sound Separation
 </title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div class="container">
-  <p class="section"><h1>Audio Demos Index</h1></p>
-  <table width="600" height="40" border="0">
-      <tr><td><a href="caples/audio_demos.html">Caples</a></td></tr>
-      <td>&nbsp;</td>
-      <tr><td><a href="high_sierras/audio_demos.html">High Sierras</a></td></tr>
-      <td>&nbsp;</td>
-      <tr><td><a href="sapsucker_woods/audio_demos.html">Sapsucker Woods</a></td></tr>
+  <p>&nbsp;</p>
+  <p><span class="title">Improving Bird Classification with Unsupervised Sound Separation</span></p>
+  <br />
+  <table border="0" align="center" class="authors">
+    <tr align="center">
+      <td><a href="https://inventingsituations.net/">Tom Denton</a></td>
+      <td><a href="https://ai.google/research/people/ScottWisdom">Scott Wisdom</a></td>
+      <td><a href="https://ai.google/research/people/106072">John R. Hershey</a></td>
+    </tr>
   </table>
+  <table border="0" align="center" class="affiliations">
+    <tr>
+      <td align="center"><img src="images/google_research_logo.png" height="40" alt=""/></td>
+      <!--
+      <td align="left"><a href="https://research.google.com/">Google Research</a></td>
+      -->
+    </tr>
+  </table>
+  <br />
+  <div align="center">
+  <img  src="./images/figure_1.png" alt="Separate+classify examples" width="1000">
+  Separate+classify examples. Top plots show PCEN mel-spectrograms of original audio, and bottom plots show PCEN melspectrograms for separated audio, where separated channels are displayed with color-coding. The legend gives the ensemble logits for the ground-truth species. Left: a Clarke’s Nuthatch in the High Sierras dataset, illustrating that simple noise suppression in the separated channel often improves logits for isolated calls with low SNR. Center: a challenging two-source example from the High Sierras dataset. Right: three-species separation from the Caples dataset.
+  </div>
+  <br />
+  <p><span class="section">Abstract</span></p>
+  <p>This paper addresses the problem of species classification in bird song recordings. The massive amount of available field recordings of birds presents an opportunity to use machine learning to automatically track bird populations. However, it also poses a problem: such field recordings typically contain significant environmental noise and overlapping vocalizations that interfere with classification. The widely available training datasets for species identification also typically leave background species unlabeled. This leads classifiers to ignore vocalizations with a low signal-to-noise ratio. However, recent advances in unsupervised sound separation, such as mixture invariant training (MixIT), enable high quality separation of bird songs to be learned from such noisy recordings. In this paper, we demonstrate improved separation quality when training a MixIT model specifically for birdsong data, outperforming a general audio separation model by over 5 dB in SI-SNR improvement of reconstructed mixtures. We also demonstrate precision improvements with a downstream multi-species bird classifier across three independent datasets. The best classifier performance is achieved by taking the maximum model activations over the separated channels and original audio. Finally, we document additional classifier improvements, including taxonomic classification, augmentation by random low-pass filters, and additional channel normalization.
+  </p>
+  <br />
+  <p class="section">Paper</p>
+  <table border="0">
+    <tbody>
+      <tr>
+        <td><p>&quot;Improving Bird Classification with Unsupervised Sound Separation&quot;,<br />
+            Tom Denton, Scott Wisdom, John R. Hershey,<br />
+            Proc. ICASSP, May 2022, Singapore.</a><br />
+            [<a href="https://arxiv.org/pdf/2110.03209.pdf">PDF</a>]
+          </p></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="section">Blog Post</p>
+  <table border="0">
+    <tbody>
+      <tr>
+        <td><p><a href="https://ai.googleblog.com/2022/01/separating-birdsong-in-wild-for.html">Google AI Blog: &quot;Separating Birdsong in the Wild for Classification&quot;</a>
+      </tr>
+    </tbody>
+  </table>
+  <p class="section">Audio Demos</p>
+  <table width="600" height="40" border="0">
+      <tr><td>&#8226; <a href="caples/audio_demos.html">Caples</a></td></tr>
+      <tr><td>&#8226; <a href="high_sierras/audio_demos.html">High Sierras</a></td></tr>
+      <tr><td>&#8226; <a href="sapsucker_woods/audio_demos.html">Sapsucker Woods</a></td></tr>
+  </table>
+  <br />
+  <p class="section">Model Checkpoints</p>
+  <table width="600" height="40" border="0">
+    <tr><td>&#8226; <a href="https://github.com/google-research/sound-separation/tree/master/models/bird_mixit">Separation model checkpoints on GitHub.</a></td></tr>
+    <tr><td>&#8226; Classification model checkpoints coming soon.</td></tr>
+  </table>
+  <p class="section">&nbsp;</p>
+  <p align="center" class="date">Last updated: May 2022</p>
 </div>
 </body>
 </html>
